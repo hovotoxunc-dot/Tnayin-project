@@ -1,99 +1,34 @@
 import { NavLink } from "react-router-dom";
 
-// const links = [
-//   { to: "/", name: "Home" },
-//   { to: "/AboutPage", name: "About" },
-//   { to: "/Contact", name: "Contact" },
-//   { to: "/Weather", name: "Weather" },
-//   { to: "/Register", name: "Register" },
-// ];
+export default function Header() {
+  const navStyle = ({ isActive }) =>
+    isActive
+      ? "text-pink-400 text-[25px] px-8 py-3 no-underline"
+      : "text-red-500 text-[25px] px-6 py-3 no-underline hover:bg-purple-300 hover:text-black transition-all duration-300";
 
-// export default function Header() {
-//   return (
-//     <nav className="bg-red-600 p-2">
-//       <ul className="flex justify-evenly items-center">
-//         {links.map((link) => (
-//           <li key={link.to}>
-//             <NavLink
-//               to={link.to}
-//               className="flex items-center justify-center text-white w-[120px] h-[50px]
-//               hover:bg-black hover:rounded-md transition"
-//             >
-//               {link.name}
-//             </NavLink>
-//           </li>
-//         ))}
-//       </ul>
-//     </nav>
-//   );
-// }
+  return (
+    <nav className="w-full bg-gray-500 h-20 flex items-center">
+      <ul className="flex justify-around w-full list-none items-center">
+        <li>
+          <NavLink to="/" className={navStyle}>Home</NavLink>
+        </li>
 
-// export default function Header() {
-//   return (
-//     <nav className="bg-red-600 p-3">
-//       <ul className="flex justify-evenly items-center">
-//         <li>
-//           <NavLink
-//             to="/"
-//             className="text-white hover:bg-black hover:rounded-md transition px-4 py-2"
-//           >
-//             Home
-//           </NavLink>
-//         </li>
+        <li>
+          <NavLink to="/AboutPage" className={navStyle}>About</NavLink>
+        </li>
 
-//         <li>
-//           <NavLink
-//             to="/AboutPage"
-//             className="text-white hover:bg-black hover:rounded-md transition px-4 py-2"
-//           >
-//             About
-//           </NavLink>
-//         </li>
+        <li>
+          <NavLink to="/Contact" className={navStyle}>Contact</NavLink>
+        </li>
 
-//         <li>
-//           <NavLink
-//             to="/Contact"
-//             className="text-white hover:bg-black hover:rounded-md transition px-4 py-2"
-//           >
-//             Contact
-//           </NavLink>
-//         </li>
+        <li>
+          <NavLink to="/Weather" className={navStyle}>Weather</NavLink>
+        </li>
 
-//         <li>
-//           <NavLink
-//             to="/Weather"
-//             className="text-white hover:bg-black hover:rounded-md transition px-4 py-2"
-//           >
-//             Weather
-//           </NavLink>
-//         </li>
-
-//         <li>
-//           <NavLink
-//             to="/Register"
-//             className="text-white hover:bg-black hover:rounded-md transition px-4 py-2"
-//           >
-//             Register
-//           </NavLink>
-//         </li>
-//       </ul>
-//     </nav>
-//   );
-// }
-
-
-
-
-// export default function Header() {
-//   return (
-//     <div className="bg-red-600 p-3">
-//       <ul className="flex justify-evenly items-center">
-//         <li><NavLink to="/" className={({ isActive }) => isActive ? "text-white bg-black px-4 py-2 rounded-md" : "text-white px-4 py-2 hover:bg-black hover:rounded-md transition"}>Home</NavLink></li>
-//         <li><NavLink to="/AboutPage" className={({ isActive }) => isActive ? "text-white bg-black px-4 py-2 rounded-md" : "text-white px-4 py-2 hover:bg-black hover:rounded-md transition"}>About</NavLink></li>
-//         <li><NavLink to="/Contact" className={({ isActive }) => isActive ? "text-white bg-black px-4 py-2 rounded-md" : "text-white px-4 py-2 hover:bg-black hover:rounded-md transition"}>Contact</NavLink></li>
-//         <li><NavLink to="/Weather" className={({ isActive }) => isActive ? "text-white bg-black px-4 py-2 rounded-md" : "text-white px-4 py-2 hover:bg-black hover:rounded-md transition"}>Weather</NavLink></li>
-//         <li><NavLink to="/Register" className={({ isActive }) => isActive ? "text-white bg-black px-4 py-2 rounded-md" : "text-white px-4 py-2 hover:bg-black hover:rounded-md transition"}>Register</NavLink></li>
-//       </ul>
-//     </div>
-//   );
-// }
+        <li>
+          <NavLink to="/Register" className={navStyle}>Register</NavLink>
+        </li>
+      </ul>
+    </nav>
+  );
+}
